@@ -5,10 +5,10 @@ function papan_catur($angka) {
     for ($i = 0;$i < $angka; $i++){      
         if ($i % 2 == 0){
             for ($j = 0;$j < $angka; $j++){
-                echo "# ";}
+                echo "# &nbsp";}
             } else {
             for ($j = 0;$j < $angka-1; $j++){
-                echo " #";}
+                echo "&nbsp #";}
             }
             echo "<br>";
     }
