@@ -2,11 +2,11 @@
 function skor_terbesar($arr){
 //kode di sini
     $data = [];
-    foreach ($arr as $key => $value){
-        for ($i = 0;$i < count($kunci);$i++){  
-            $items2[$key]["$kunci[$i]"] = $value[$i];
-            }
-    }
+    for ($i = 0; $i < count($arr); $i++){
+        $data[$arr[$i]["kelas"]]["nama"] = $arr[$i]["nama"];
+        $data[$arr[$i]["kelas"]]["kelas"] = $arr[$i]["kelas"];
+        $data[$arr[$i]["kelas"]]["nilai"] = $arr[$i]["nilai"];
+    } return $data; 
 }
 
 // TEST CASES
@@ -38,7 +38,9 @@ $skor = [
   ],
 ];
 
+echo "<pre>";
 print_r(skor_terbesar($skor));
+echo "</pre>";
 /* OUTPUT
   Array (
     [Laravel] => Array
