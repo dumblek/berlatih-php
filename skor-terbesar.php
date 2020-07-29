@@ -2,7 +2,7 @@
 function skor_terbesar($arr){
 //kode di sini
     $data = [];
-    for ($i = 0; $i < count($arr); $i++){
+    for ($i = 0; $i < count($arr)-1; $i++){
         $data[$arr[$i]["kelas"]]["nama"] = $arr[$i]["nama"];
         $data[$arr[$i]["kelas"]]["kelas"] = $arr[$i]["kelas"];
         $data[$arr[$i]["kelas"]]["nilai"] = $arr[$i]["nilai"];
