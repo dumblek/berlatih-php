@@ -2,11 +2,37 @@
 function skor_terbesar($arr){
 //kode di sini
     $data = [];
-    for ($i = 0; $i < count($arr)-1; $i++){
-        $data[$arr[$i]["kelas"]]["nama"] = $arr[$i]["nama"];
-        $data[$arr[$i]["kelas"]]["kelas"] = $arr[$i]["kelas"];
-        $data[$arr[$i]["kelas"]]["nilai"] = $arr[$i]["nilai"];
-    } return $data; 
+    $n1 = 0;
+    $n2 = 0;
+    $n3 = 0;
+
+    foreach ($arr as $key => $value){
+        if ($value['nilai'] > $n1 && $value['kelas'] == 'Laravel'){
+            $n1 = $value['nilai'];
+            $data[$value['kelas']] = 
+            [
+                'nama' => $value['nama'],
+                'kelas' => $value['kelas'],
+                'nilai' => $value["nilai"]
+            ];
+        } else if ($value['nilai'] > $n2 && $value['kelas'] == 'React Native'){
+            $n2 = $value['nilai'];
+            $data[$value['kelas']] = 
+            [
+                'nama' => $value['nama'],
+                'kelas' => $value['kelas'],
+                'nilai' => $value["nilai"]
+            ];
+        } else if ($value['nilai'] > $n3 && $value['kelas'] == 'React JS'){
+            $n3 = $value['nilai'];
+            $data[$value['kelas']] = 
+            [
+                'nama' => $value['nama'],
+                'kelas' => $value['kelas'],
+                'nilai' => $value["nilai"]
+            ];
+        }
+    } return $data;
 }
 
 // TEST CASES
